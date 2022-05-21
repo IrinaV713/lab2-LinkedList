@@ -95,4 +95,14 @@ public class DoublyLinkedListTest {
         assertEquals('k', dll.tail.data);
         assertEquals('c', dll.head.next.data);
     }
+
+    @Test
+    void cloneList() {
+        dll.append('1');
+        dll.append('2');
+        dll.append('3');
+        dll.append('4');
+        DoublyLinkedList test_clone = dll.cloneList();
+        assertEquals(dll, test_clone);
+    }
 }

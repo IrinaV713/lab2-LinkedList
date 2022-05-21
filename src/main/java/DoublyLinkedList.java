@@ -160,4 +160,8 @@ public class DoublyLinkedList {
             if (tail != null) tail.next = null;
         }
     }
+
+    public DoublyLinkedList cloneList(){
+        return this;
+    }
 }
