@@ -164,4 +164,24 @@ public class DoublyLinkedList {
     public DoublyLinkedList cloneList(){
         return this;
     }
+
+    public void reverse(){
+        if(this.head != null) {
+            Node originalHead = head;
+            Node previousNode = head;
+            Node temp;
+            Node currentNode = head.next;
+            previousNode.next = null;
+            previousNode.prev = null;
+            while(currentNode != null) {
+                temp = currentNode.next;
+                currentNode.next = previousNode;
+                previousNode.prev = currentNode;
+                previousNode = currentNode;
+                currentNode = temp;
+            }
+            this.head = previousNode;
+            this.tail = originalHead;
+        }
+    }
 }

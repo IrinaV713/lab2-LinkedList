@@ -105,4 +105,17 @@ public class DoublyLinkedListTest {
         DoublyLinkedList test_clone = dll.cloneList();
         assertEquals(dll, test_clone);
     }
+
+    @Test
+    void reverse() {
+        dll.append('1');
+        dll.append('2');
+        dll.append('3');
+        dll.append('4');
+        dll.reverse();
+        assertEquals('4', dll.head.data);
+        assertEquals('1', dll.tail.data);
+        assertEquals('3', dll.head.next.data);
+        assertEquals('2', dll.tail.prev.data);
+    }
 }
