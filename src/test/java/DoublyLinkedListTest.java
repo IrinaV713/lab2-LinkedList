@@ -118,4 +118,34 @@ public class DoublyLinkedListTest {
         assertEquals('3', dll.head.next.data);
         assertEquals('2', dll.tail.prev.data);
     }
+
+    @Test
+    void findFirst() {
+        dll.append('a');
+        dll.append('b');
+        dll.append('a');
+        dll.append('b');
+        dll.append('d');
+        dll.append('k');
+        dll.append('a');
+        assertEquals(0, dll.findFirst('a'));
+        assertEquals(-1, dll.findFirst('w'));
+        assertEquals(1, dll.findFirst('b'));
+        assertEquals(5, dll.findFirst('k'));
+    }
+
+    @Test
+    void findLast() {
+        dll.append('a');
+        dll.append('b');
+        dll.append('a');
+        dll.append('b');
+        dll.append('d');
+        dll.append('k');
+        dll.append('a');
+        assertEquals(6, dll.findLast('a'));
+        assertEquals(-1, dll.findLast('w'));
+        assertEquals(3, dll.findLast('b'));
+        assertEquals(4, dll.findLast('d'));
+    }
 }

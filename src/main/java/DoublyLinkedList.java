@@ -184,4 +184,50 @@ public class DoublyLinkedList {
             this.tail = originalHead;
         }
     }
+
+    public int findFirst(char c){
+        int index = -1;
+
+        Node temp = head;
+        boolean found = false;
+        int i = 0;
+
+        if(temp != null) {
+            while(temp != null) {
+                if(temp.data == c) {
+                    found = true;
+                    break;
+                }
+                i++;
+                temp = temp.next;
+            }
+            if (found) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    public int findLast(char c){
+        int index = -1;
+
+        Node temp = tail;
+        boolean found = false;
+        int i = this.length()-1;
+
+        if(temp != null) {
+            while(temp != null) {
+                if(temp.data == c) {
+                    found = true;
+                    break;
+                }
+                i--;
+                temp = temp.prev;
+            }
+            if (found) {
+                index = i;
+            }
+        }
+        return index;
+    }
 }
