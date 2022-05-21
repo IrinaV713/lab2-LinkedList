@@ -80,4 +80,19 @@ public class DoublyLinkedListTest {
         assertThrows(IndexOutOfBoundsException.class, ()-> dll.get(-1));
         assertThrows(IndexOutOfBoundsException.class, ()-> dll.get(7));
     }
+
+    @Test
+    void deleteAll() {
+        dll.append('a');
+        dll.append('b');
+        dll.append('a');
+        dll.append('c');
+        dll.append('d');
+        dll.append('k');
+        dll.append('a');
+        dll.deleteAll('a');
+        assertEquals('b', dll.head.data);
+        assertEquals('k', dll.tail.data);
+        assertEquals('c', dll.head.next.data);
+    }
 }
