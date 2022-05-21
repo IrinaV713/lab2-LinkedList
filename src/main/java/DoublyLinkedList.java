@@ -21,4 +21,31 @@ public class DoublyLinkedList {
         }
         System.out.println();
     }
+
+    public void append(char c){
+        Node elem = new Node();
+        elem.data = c;
+        if(head == null){
+            head = tail = elem;
+            head.prev = null;
+        }
+        else{
+            tail.next = elem;
+            elem.prev = tail;
+            tail = elem;
+        }
+        tail.next = null;
+    }
+
+    public int length(){
+        Node elem = head;
+        int len = 0;
+        if(head != null) {
+            while(elem != null) {
+                len++;
+                elem = elem.next;
+            }
+        }
+        return len;
+    }
 }
