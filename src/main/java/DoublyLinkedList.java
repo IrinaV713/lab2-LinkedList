@@ -154,5 +154,10 @@ public class DoublyLinkedList {
                 }
             }
         }
+
+        while(tail != null && tail.data == c) {
+            tail = tail.prev;
+            if (tail != null) tail.next = null;
+        }
     }
 }
