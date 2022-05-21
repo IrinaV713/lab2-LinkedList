@@ -148,4 +148,28 @@ public class DoublyLinkedListTest {
         assertEquals(3, dll.findLast('b'));
         assertEquals(4, dll.findLast('d'));
     }
+
+    @Test
+    void clear() {
+        dll.append('a');
+        dll.append('b');
+        dll.append('a');
+        dll.append('b');
+        dll.clear();
+        assertEquals(0, dll.length());
+    }
+
+    @Test
+    void extend() {
+        dll.append('a');
+        dll.append('b');
+        DoublyLinkedList add = new DoublyLinkedList();
+        add.append('1');
+        add.append('2');
+        dll.extend(add);
+        assertEquals('a', dll.head.data);
+        assertEquals('2', dll.tail.data);
+        assertEquals('b', dll.head.next.data);
+        assertEquals(4, dll.length());
+    }
 }

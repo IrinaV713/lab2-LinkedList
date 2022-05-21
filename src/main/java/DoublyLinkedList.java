@@ -230,4 +230,25 @@ public class DoublyLinkedList {
         }
         return index;
     }
+
+    public void clear(){
+        Node temp = new Node();
+        while(this.head != null) {
+            temp = this.head;
+            this.head = this.head.next;
+            temp = null;
+        }
+    }
+
+    public void extend(DoublyLinkedList addList){
+        if(addList != null) {
+            Node currentNode = addList.head;
+            if (addList.head != null) {
+                while (currentNode != null) {
+                    this.append(currentNode.data);
+                    currentNode = currentNode.next;
+                }
+            }
+        }
+    }
 }
